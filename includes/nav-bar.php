@@ -28,7 +28,7 @@ if(isset($_SESSION['loginID'])){
 						 <span class="icon-bar"></span>
 						 <span class="icon-bar"></span>
 					  </button>
-					   <a class="navbar-brand" data-scroll href="#sec_1">Mendota <img src="assets/img/sun.png" alt="logo"/></a>
+					   <a class="navbar-brand" data-scroll href="#sec_1">Mendota University<img src="assets/img/sun.png" alt="logo"/></a>
 				   <div class="collapse navbar-collapse" id="example-navbar-collapse">
 					  <ul class="nav navbar-nav">
                       <li><a href="./index.php">Home</a></li>
