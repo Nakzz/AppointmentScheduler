@@ -6,7 +6,7 @@
 		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
              
         <!-- TITLE -->
-        <title>Mendota University: <?php echo $title; ?> </title>	
+        <title><?php echo $title; ?>: Mendota University </title>	
 
 			
 		<!-- DESCRIPTION -->		
