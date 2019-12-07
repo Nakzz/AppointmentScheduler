@@ -420,7 +420,8 @@ body{
 }
 
 .navbar-brand {
-	height:100%;
+	/* height:100%; */
+	height: 40px;
 }
 
 #bs-navbar-collapse {
