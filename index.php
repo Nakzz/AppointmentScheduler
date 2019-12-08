@@ -33,12 +33,12 @@
 	
 	</head>
 	   
-   <body id="top" data-spy="scroll" data-target=".header" data-offset="80">
+   <body id="top" data-offset="80">
 	  
 
 		<!--HEADER-->
 
-<?php include_once("./includes/nav-bar.php") ?>
+        <?php include_once("./includes/nav-bar.php") ?>
 
 		<!--/HEADER-->
 		
@@ -236,7 +236,6 @@
 
 	<!-- LANDINGPAGE SLIDER  -->
     <script type="text/javascript" src="./assets/js/hammer.min.js"></script>	
-		<script type="text/javascript" src="./assets/js/jquery.mobile-1.4.3.js"></script>	
 		<script type="text/javascript" src="./assets/js/jquery.superslides.js"></script>
 
         		<!-- INITIALIZATION  -->

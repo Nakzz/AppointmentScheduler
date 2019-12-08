@@ -241,16 +241,4 @@ jQuery( document ).ready(function( $ ) {
 	$slides.superslides({
 	hashchange: false
 	});
-	$(".home-bg").swiperight(function() {  
-	$slides.data('superslides').animate('prev');		  
-	});  
-	$(".home-bg").swipeleft(function() {  
-	$slides.data('superslides').animate('next'); 
-	});  
-	$(".landing-text-pos").swiperight(function() {  
-	$slides.data('superslides').animate('prev');		  
-	});  
-	$(".landing-text-pos").swipeleft(function() {  
-	$slides.data('superslides').animate('next'); 
-	});  
 

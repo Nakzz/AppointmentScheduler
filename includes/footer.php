@@ -45,7 +45,7 @@
 		<script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
 		
 		<!-- NICE SCROLL  -->
-		<script type="text/javascript" src="assets/js/jquery.nicescroll.js"></script>
+		<!-- <script type="text/javascript" src="assets/js/jquery.nicescroll.js"></script> -->
 		
 		<!-- ANIMATION  -->
 		<script type="text/javascript" src="assets/js/wow.min.js"></script>
@@ -55,4 +55,5 @@
 		<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
 
 
+        <script type="text/javascript" src="assets/js/modernizr.js" ></script>
 

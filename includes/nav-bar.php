@@ -28,12 +28,12 @@ if(isset($_SESSION['loginID'])){
 						 <span class="icon-bar"></span>
 						 <span class="icon-bar"></span>
 					  </button>
-					   <a class="navbar-brand" data-scroll href="./index.php"><img src="assets/img/sun.png" alt="logo"/> Mendota University</a>
+					   <a class="navbar-brand" href="./index.php"><img src="assets/img/sun.png" alt="logo"/> Mendota University</a>
 				   <div class="collapse navbar-collapse" id="example-navbar-collapse">
 					  <ul class="nav navbar-nav">
                       <li><a href="./index.php">Home</a></li>
-						<li class="<?php echo $loginClassState?>"><a data-scroll href="./login.php">Login</a></li>
-                        <li class="<?php echo $logoutClassState?>" ><a data-scroll href="./logout.php">Logout</a></li>
+						<li class="<?php echo $loginClassState?>"><a href="./login.php">Login</a></li>
+                        <li class="<?php echo $logoutClassState?>" ><a href="./logout.php">Logout</a></li>
                         <li><a href="./scheduler.php">Appointment</a></li>
                         <li><a href="./center.php">Center</a></li>
                         <li><a href="./faculty.php">Faculty</a></li>
