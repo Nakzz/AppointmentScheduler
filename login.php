@@ -9,15 +9,20 @@
 
 
         include("connect.inc.php");
-        function set_session($id,$result_set){
+        function set_session($id,$pageid){
             session_start();
             $sess_id = session_id();
             $_SESSION['loginID']=$id;
+            $_SESSION['pageID']=$pageid;
             $_SESSION['miscellaneous']="f*ckyou";
-            $row = mysqli_fetch_assoc($result_set);
-            $_SESSION['lastName']=$row["last_name"];
+    
         }
-        if(isset($_POST['submit_button'])){
+        if($_POST['page_fac_id']){
+            $page_fac_id=$_POST['page_fac_id'];
+        }else{
+            die("can't get faculty id from page!");
+        }
+        if($_POST['submit_button']){
             $usrname=$_POST['fac_id'];
             $passwd=$_POST['password'];
             $query_sentence="SELECT * FROM FACULTY WHERE fac_id=\"$usrname\" AND password=\"$passwd\"";
@@ -32,8 +37,8 @@
                     echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=login.php\">";
                 }elseif($num==1){
                     echo "<script type='text/javascript'>alert('Logged in!');</script>";
-                    echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=test.php\">";
-                    set_session($usrname,$auth_result);
+                    echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=update.php\">";
+                    set_session($usrname,$page_fac_id);
                     exit;
                 }else{
                     echo "<script type='text/javascript'>alert('Database Error!');</script>";
