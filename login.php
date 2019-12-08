@@ -66,12 +66,26 @@
 		<!--/HEADER-->
         
         
+        		<!--ABOUT-->	
+                <section class="intro text-center section-padding" id="intro">
+			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
+				<div class="row">
+					<div class="col-lg-8 align-center about">
+						<h1 class="arrow">Login</h1>
+						<hr>
+						<!-- <p>Lorem ipsum dolor sit amet, ad eos iriure corpora prodesset. Partem timeam at vim, mel veritus accusata ea. Ius ei dicam inciderint, eleifend deseruisse ei mea. Alia dicam eam te, summo exerci ei mei.Ei sea debet choro omittantur. Ea nam quis aeterno, et usu semper senserit.</p> -->
+					</div>
+				</div>
+			</div>
+        </section>
+		<!--/ABOUT-->
+        
 
 					<!--SUBSCRIBE-->	
-                    <section class="subscribe text-center">
+                    <section class="subscribe section-padding text-center ">
 			<div class="subscribe-overlay"></div>
 			<div class="container wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
-				<h1>Login</h1>
+				<!-- <h1>Login</h1> -->
 				<form action="login.php" name="login_form" method="POST" class="center-block align-center col-lg-5 col-md-5 col-sm-10 col-xs-10">
 					<div class="input-group col-lg-12 align-center">
                       <input type="text" class="form-control email-add" name="fac_id" placeholder="Enter Faculty id">
@@ -101,8 +115,9 @@
 		<script type="text/javascript" src="assets/js/notifyMe.js"></script>
 		
 		<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
+		<script type="text/javascript" src="assets/js/init_<?php echo $title?>.js"></script>
 
-	</div>	
+	
 		
     </body>
 </html>

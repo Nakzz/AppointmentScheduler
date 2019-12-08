@@ -15,7 +15,18 @@
 	
 jQuery( document ).ready(function( $ ) {
 	$.noConflict();
-	
+    
+    var setElementHeight = function () {
+		var height = $(window).height();
+		$('.autoheight').css('min-height', (height));
+		
+    };
+    
+    $(window).on("resize", function () {
+		setElementHeight();
+	}).resize();
+
+    
 	/* Overlay */
 	if (Modernizr.touch) {
 	// show the close overlay button
@@ -74,14 +85,14 @@ jQuery( document ).ready(function( $ ) {
 	
 	/** Menu Close Logic **/
 
-	$('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
-		$('.nav li a').click(function(){
-			$('.navbar-collapse.collapse').toggleClass('in');
-	});	
+	// $('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
+	// 	$('.nav li a').click(function(){
+	// 		$('.navbar-collapse.collapse').toggleClass('in');
+	// });	
 /***********************************/
 /*Nice Scroll*/
 /**********************************/
-	 $("html").niceScroll();
+	//  $("html").niceScroll();
 
 /***********************************/
 /*Placeholder JS call*/
@@ -171,14 +182,14 @@ jQuery( document ).ready(function( $ ) {
     
     /**********Menu Close Logic***************/
 
-	$('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
-    $('.nav li a').click(function(){
-        $('.navbar-collapse.collapse').toggleClass('in');
-});	
+// 	$('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
+//     $('.nav li a').click(function(){
+//         $('.navbar-collapse.collapse').toggleClass('in');
+// });	
 
  /******* Nice Scroll *******/
 
- $("html").niceScroll({cursorcolor:"#ff1d8d"});
+//  $("html").niceScroll({cursorcolor:"#ff1d8d"});
  
 
 	
