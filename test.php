@@ -17,11 +17,14 @@
 	$office =$row['office'];
 	$id = $_SESSION['loginID'];
 	$mis = $_SESSION['miscellaneous'];
+	$pageId = $_SESSION['pageID'];
     mysqli_close($conn);
 	echo "<H2>Password: $password</H2>";
 	echo "<H2>Office: $office</H2>";
 	echo "<H2>id: $id</H2>";
 	echo "<H2>Miscellaneous: $mis</H2>";
+	echo "<H2>PageId: $pageId";
+	echo "<input name =\"update\" type=\"submit\" value=\"UPDATE\">";
 ?>
 
 </body>
