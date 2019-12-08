@@ -55,5 +55,4 @@
 		<script type="text/javascript" src="assets/js/jquery.placeholder.js"></script>
 
 
-		<!-- INITIALIZATION  -->
-		<script type="text/javascript" src="assets/js/init_<?php echo $title?>.js"></script>
+

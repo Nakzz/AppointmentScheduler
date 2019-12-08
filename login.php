@@ -17,12 +17,12 @@
             $_SESSION['miscellaneous']="f*ckyou";
     
         }
-        if($_POST['page_fac_id']){
+        if(isset($_POST['page_fac_id'])){
             $page_fac_id=$_POST['page_fac_id'];
         }else{
-            die("can't get faculty id from page!");
+            // die("can't get faculty id from page!");
         }
-        if($_POST['submit_button']){
+        if(isset($_POST['submit_button'])){
             $usrname=$_POST['fac_id'];
             $passwd=$_POST['password'];
             $query_sentence="SELECT * FROM FACULTY WHERE fac_id=\"$usrname\" AND password=\"$passwd\"";
@@ -53,9 +53,6 @@
         include_once("./includes/head.php");
 
         ?>      
-
-        <!-- TITLE -->
-        <title>Scheduler: <?php echo $title; ?> </title>
 	
 	</head>
 	   

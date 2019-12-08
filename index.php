@@ -66,10 +66,10 @@
 		
 			<div class="home-bg"></div>
 			<div class="col-lg-12 landing-text-pos align-center">
-				<h1 class="wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="1s">FREEDOM MUSIC FESTIVAL</h1>
+				<h1 class="wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="1s">WELCOME TO MENDOTA UNIVERSITY</h1>
 				<hr id="title_hr"/>
 				<p class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Grand Space, Portland. 21-26 Sept 2014</p>
-				<a class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s" data-wow-delay="1.5s" data-scroll href="#swag">Book Now</a>
+				<a class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s" data-wow-delay="1.5s" data-scroll href="#intro">Learn more</a>
 			</div>
 		</section>
 		<!--/HOME-->
@@ -114,7 +114,7 @@
 											  </div>
 											</div>
 										</div>
-										<h2>Mark Anderson</h2>
+										<h2>Diana Pena-Moreno</h2>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet.</p>
 									</div>
 
@@ -154,7 +154,7 @@
 				<div class="md-content">
 					<div class="folio">
 						<div class="avatar1"></div>
-						<div class="sp-name"><strong>Mark Anderson</strong><br/>Director, ABC</div>
+						<div class="sp-name"><strong>Diana Pena-Moreno</strong><br/>AJ's lover</div>
 						<div class="sp-dsc">
 						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.
 							<blockquote>

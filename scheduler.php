@@ -10,11 +10,11 @@
         ChromePhp::log('hello world');
 
 
-        $title = "Home";
+        $title = "Scheduler";
 
 
        
-        ChromePhp::log($_GET["uid"]); 
+        // ChromePhp::log($_GET["uid"]); 
         
 
         include("./includes/connect.inc.php");
@@ -431,7 +431,10 @@
 <?php include_once("./includes/footer.php")?>
 		<!-- SCHEDULE TABS  -->
         <script type="text/javascript" src="assets/js/modernizr.js" ></script>
-		<script type="text/javascript" src="assets/js/cbpFWTabs.js" ></script>		
+        <script type="text/javascript" src="assets/js/cbpFWTabs.js" ></script>		
+        
+                		<!-- INITIALIZATION  -->
+		<script type="text/javascript" src="assets/js/init_<?php echo $title?>.js"></script>
         
         
 <script>
