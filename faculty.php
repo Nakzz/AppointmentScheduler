@@ -97,10 +97,10 @@
     
         
 		<!--ABOUT-->	
-        <section class="intro text-center section-padding autoheight" id="intro">
+        <section class="intro text-left section-padding autoheight" id="intro">
 			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
 				<div class="row">
-					<div class="col-lg-8 align-center about">
+					<div class="col-lg-8 about">
 
                      <!--b. present info-->
     <form action="login.php" method="post">
