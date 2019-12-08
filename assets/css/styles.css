@@ -74,12 +74,13 @@ a:focus {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 2.2em;
 	color: #FFFFFF;
 }
 
 h2 {
-	font-size: 1.5em;
+	color: #FFFFFF;
+	font-size: 1.8em;
 	margin: 0.83em 0;
 }
 
@@ -104,8 +105,8 @@ h6 {
 }
 
 p {
-	color: #fff;
-    font-size: 1.3em;
+	color: #eee;
+    font-size: 1.1em;
     line-height: 1.6em;
 }
 
@@ -438,11 +439,12 @@ body{
 /*****************************/
 
 .intro {
-	background: #0c040f;
+	background: #0c040fe6;
 }
 
 .about p{
 	margin-bottom:0;
+	padding-left: 20px;
 }
 
 h1.arrow {

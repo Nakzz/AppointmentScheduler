@@ -1,7 +1,14 @@
 <html>
 <head>
-	<title>Faculty Information</title>
+
+    
     <?php
+
+    $title = "Faculty";
+
+    include_once("./includes/head.php");
+
+
         /*Collect fac_id*/
         $fac_id=$_POST['fac_id'];
         /*Universal Functions*/
@@ -22,7 +29,7 @@
             /*Process sql result */
             $rowNum = mysqli_num_rows($result);
             if($rowNum>0){
-                echo ("<h3>$blockName</h3>");
+                echo ("<h2>$blockName</h2>");
                 while ($row = mysqli_fetch_assoc($result)) {
                     $description_in = $row ['description'];
                     echo "<p>$description_in</p>";
@@ -31,7 +38,14 @@
         }
     ?>
 </head>
-<body>
+<body id="top" data-spy="scroll" data-target=".header" data-offset="80">
+	  
+
+      <!--HEADER-->
+
+<?php include_once("./includes/nav-bar.php") ?>
+
+      <!--/HEADER-->
     <!--Prework: assure facid-->
     <?php
         include("connect.inc.php");
@@ -61,15 +75,7 @@
         //echo"<h3>ImgLoc: $prof_img_loc</h3>";//debug
         //echo"<h2>END OF DEBUG</h2>";//debug
     ?>
-    <!--b. present info-->
-    <form action="login.php" method="post">
-        <a href="javascript:;" onclick="parentNode.submit();"><?php echo"<h2>$prof_name</h2>"; ?></a>
-        <input type="hidden" name="page_fac_id" value=testAdmin>
-    </form>
-    <?php
-        echo ("<img src=\"$prof_img_loc\">");
-        echo "</br>";
-    ?>
+   
 
     <!--part B: Prof Basic Info--><!--DYNAMIC, includes Office, Phone, Email, if applicable.-->
     <!--a.collect info-->
@@ -88,8 +94,27 @@
         $prof_email = $row["email"];
 
     ?>
-    <!--b. present info-->
-    <?php 
+    
+        
+		<!--ABOUT-->	
+        <section class="intro text-center section-padding autoheight" id="intro">
+			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
+				<div class="row">
+					<div class="col-lg-8 align-center about">
+
+                     <!--b. present info-->
+    <form action="login.php" method="post">
+        <a href="javascript:;" onclick="parentNode.submit();"><?php echo"<h1 class=\"arrow\">$prof_name</h1>"; ?></a>
+        <input type="hidden" name="page_fac_id" value=testAdmin>
+    </form>
+    <?php
+        // echo ("<img src=\"$prof_img_loc\">"); TODO: remove when proper image path comes
+        echo ("<img src=\"./assets/img/krista.jpg \">");
+        echo "<hr>";
+    ?>
+
+<!--b. present info-->
+<?php 
         write_if_not_blank("Office",$prof_office);
         write_if_not_blank("Phone",$prof_phone);
         write_if_not_blank("Email",$prof_email);
@@ -113,5 +138,39 @@
     <?php
         write_a_block($fac_id,"COURSES TAUGHT",$conn);
     ?>
-</body>
+					</div>
+				</div>
+			</div>
+        </section>
+		<!--/ABOUT-->	
+
+
+
+     
+
+        
+<?php include_once("./includes/footer.php")?>
+
+	<!-- LANDINGPAGE SLIDER  -->
+    <script type="text/javascript" src="./assets/js/hammer.min.js"></script>	
+		<script type="text/javascript" src="./assets/js/jquery.mobile-1.4.3.js"></script>	
+		<script type="text/javascript" src="./assets/js/jquery.superslides.js"></script>
+
+        		<!-- INITIALIZATION  -->
+		<script type="text/javascript" src="assets/js/init_<?php echo $title?>.js"></script>
+
+	</div>	
+		
+    </body>
 </html>
+
+
+
+	   
+
+		
+
+		
+
+				
+		

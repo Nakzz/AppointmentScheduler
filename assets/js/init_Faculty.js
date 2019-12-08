@@ -59,14 +59,14 @@ jQuery( document ).ready(function( $ ) {
 		$(".header-hide").addClass("scroll-header");
 	}
 	
-	// smoothScroll.init({
-	// 	speed: 1000,
-	// 	easing: 'easeInOutCubic',
-	// 	offset: height,
-	// 	updateURL: false,
-	// 	callbackBefore: function ( toggle, anchor ) {},
-	// 	callbackAfter: function ( toggle, anchor ) {},
-	// });
+	smoothScroll.init({
+		speed: 1000,
+		easing: 'easeInOutCubic',
+		offset: height,
+		updateURL: false,
+		callbackBefore: function ( toggle, anchor ) {},
+		callbackAfter: function ( toggle, anchor ) {},
+	});
 	
 	$(window).scroll(function() {
 		var height = $(window).height();
@@ -79,7 +79,34 @@ jQuery( document ).ready(function( $ ) {
 	
 	});
 	
-
+	/*** 3D Gallery *********/
+	new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+	new CBPFWTabs( document.getElementById( 'tabs-ui' ) );
+	
+	/********Vimeo Video*****************/
+	$('.venobox').venobox({
+		numeratio: true,
+		infinigall: true,
+		border: '20px'
+	});
+	$('.venoboxvid').venobox({
+		bgcolor: '#000'
+	});
+	$('.venoboxframe').venobox({
+		border: '6px'
+	});
+	$('.venoboxinline').venobox({
+		framewidth: '300px',
+		frameheight: '250px',
+		border: '6px',
+		bgcolor: '#f46f00'
+	});
+	$('.venoboxajax').venobox({
+		border: '30px;',
+		frameheight: '220px'
+	});	
+		
+		
 	/*******Schedule Accordion *************/
 	
 	$('.accordion .item .heading').click(function() {		
@@ -130,7 +157,34 @@ jQuery( document ).ready(function( $ ) {
 
 	});
 	
-
+	/* Overlay */
+	if (Modernizr.touch) {
+	// show the close overlay button
+	$(".close-overlay").removeClass("hidden");
+	// handle the adding of hover class when clicked
+	$(".img").click(function(e){
+		if (!$(this).hasClass("hover")) {
+			$(this).addClass("hover");
+		}
+	});
+	// handle the closing of the overlay
+	$(".close-overlay").click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		if ($(this).closest(".img").hasClass("hover")) {
+			$(this).closest(".img").removeClass("hover");
+		}
+	});
+	} else {
+		// handle the mouseenter functionality
+		$(".img").mouseenter(function(){
+			$(this).addClass("hover");
+		})
+		// handle the mouseleave functionality
+		.mouseleave(function(){
+			$(this).removeClass("hover");
+		});
+	}
 	
 	/***************** Animation ******************/
 	var wow = new WOW(
@@ -156,14 +210,14 @@ jQuery( document ).ready(function( $ ) {
 		
 	/**********Menu Close Logic***************/
 
-	// $('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
-	// 	$('.nav li a').click(function(){
-	// 		$('.navbar-collapse.collapse').toggleClass('in');
-	// });	
+	$('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
+		$('.nav li a').click(function(){
+			$('.navbar-collapse.collapse').toggleClass('in');
+	});	
 	
 	 /******* Nice Scroll *******/
 
-	//  $("html").niceScroll({cursorcolor:"#ff1d8d"});
+	 $("html").niceScroll({cursorcolor:"#ff1d8d"});
 	 
 	 /** Placeholder JS call **/
 	$('input[type=text], textarea').placeholder();	
