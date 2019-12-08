@@ -153,7 +153,6 @@
 
 	<!-- LANDINGPAGE SLIDER  -->
     <script type="text/javascript" src="./assets/js/hammer.min.js"></script>	
-		<script type="text/javascript" src="./assets/js/jquery.mobile-1.4.3.js"></script>	
 		<script type="text/javascript" src="./assets/js/jquery.superslides.js"></script>
 
         		<!-- INITIALIZATION  -->

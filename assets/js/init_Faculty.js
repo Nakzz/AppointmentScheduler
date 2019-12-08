@@ -79,32 +79,6 @@ jQuery( document ).ready(function( $ ) {
 	
 	});
 	
-	/*** 3D Gallery *********/
-	new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-	new CBPFWTabs( document.getElementById( 'tabs-ui' ) );
-	
-	/********Vimeo Video*****************/
-	$('.venobox').venobox({
-		numeratio: true,
-		infinigall: true,
-		border: '20px'
-	});
-	$('.venoboxvid').venobox({
-		bgcolor: '#000'
-	});
-	$('.venoboxframe').venobox({
-		border: '6px'
-	});
-	$('.venoboxinline').venobox({
-		framewidth: '300px',
-		frameheight: '250px',
-		border: '6px',
-		bgcolor: '#f46f00'
-	});
-	$('.venoboxajax').venobox({
-		border: '30px;',
-		frameheight: '220px'
-	});	
 		
 		
 	/*******Schedule Accordion *************/
@@ -210,47 +184,19 @@ jQuery( document ).ready(function( $ ) {
 		
 	/**********Menu Close Logic***************/
 
-	$('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
-		$('.nav li a').click(function(){
-			$('.navbar-collapse.collapse').toggleClass('in');
-	});	
+	// $('.navbar-collapse.in').niceScroll({cursorcolor:"#c8bd9f"});
+	// 	$('.nav li a').click(function(){
+	// 		$('.navbar-collapse.collapse').toggleClass('in');
+	// });	
 	
 	 /******* Nice Scroll *******/
 
-	 $("html").niceScroll({cursorcolor:"#ff1d8d"});
+	//  $("html").niceScroll({cursorcolor:"#ff1d8d"});
 	 
 	 /** Placeholder JS call **/
 	$('input[type=text], textarea').placeholder();	
 	
 });
 
-/*************************************/
-/* Landing Slider Js */
-/**************************************/
 
-	var $slides = $('#slides');
-
-	Hammer($slides[0]).on("swipeleft", function(e) {
-	$slides.data('superslides').animate('next');
-	});
-
-	Hammer($slides[0]).on("swiperight", function(e) {
-	$slides.data('superslides').animate('prev');
-	});
-
-	$slides.superslides({
-	hashchange: false
-	});
-	$(".home-bg").swiperight(function() {  
-	$slides.data('superslides').animate('prev');		  
-	});  
-	$(".home-bg").swipeleft(function() {  
-	$slides.data('superslides').animate('next'); 
-	});  
-	$(".landing-text-pos").swiperight(function() {  
-	$slides.data('superslides').animate('prev');		  
-	});  
-	$(".landing-text-pos").swipeleft(function() {  
-	$slides.data('superslides').animate('next'); 
-	});  
 
