@@ -45,7 +45,34 @@
 
 		
 
+				
+		<!--HOME-->		
+		<section id="sec_1" class="autoheight">
 		
+		<!--SLIDER-->
+		<div id="slides">
+			<div class="slides-container">
+			  <img src="assets/img/slider/1.jpg" alt="Cinelli">
+			  <img src="assets/img/slider/2.jpg" alt="Surly">
+			  <img src="assets/img/slider/3.jpg" alt="Cinelli">
+			  
+			</div>
+			<nav class="slides-navigation">
+			  <a href="#" class="next  fa fa-2x fa-chevron-right"></a>
+			  <a href="#" class="prev  fa fa-2x fa-chevron-left"></a>
+			</nav>
+		</div>
+		<!--/SLIDER-->
+		
+			<div class="home-bg"></div>
+			<div class="col-lg-12 landing-text-pos align-center">
+				<h1 class="wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="1s">FREEDOM MUSIC FESTIVAL</h1>
+				<hr id="title_hr"/>
+				<p class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Grand Space, Portland. 21-26 Sept 2014</p>
+				<a class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s" data-wow-delay="1.5s" data-scroll href="#swag">Book Now</a>
+			</div>
+		</section>
+		<!--/HOME-->
 		
         
 		<!--ABOUT-->	
@@ -115,45 +142,6 @@
 										</div>
 										<h2>John Thomson</h2>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet.</p>
-									</div>
-								</li>
-								<!-- <li> Second Set of Speakers -->
-								<li>
-									<div class="col-md-4 col-sm-4 wow animated fadeInUp">
-										<div class="overlay-effect effects clearfix">
-										<div class="img">
-										  <img src="assets/img/team/team1.jpg" alt="Portfolio Item">
-										  <div class="overlay">
-											<button class="md-trigger expand" data-modal="modal-4"><i class="fa fa-search"></i><br>View More</button>
-										  </div>
-										</div>
-										</div>
-										<h2>Mark Anderson</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet.</p>
-									</div>
-									<div class="col-md-4 col-sm-4 wow animated fadeInUp">
-										<div class="overlay-effect effects clearfix">
-											<div class="img">
-											  <img src="assets/img/team/team2.jpg" alt="Portfolio Item">
-											  <div class="overlay">
-												<button class="md-trigger expand" data-modal="modal-5"><i class="fa fa-search"></i><br>View More</button>
-											  </div>
-											</div>
-										</div>
-										<h2>Mary Doe</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet.</p>
-									</div>
-									<div class="col-md-4 col-sm-4 wow animated fadeInUp">
-										<div class="overlay-effect effects clearfix">
-											<div class="img">
-											  <img src="assets/img/team/team3.jpg" alt="Portfolio Item">
-											  <div class="overlay">
-												<button class="md-trigger expand" data-modal="modal-6"><i class="fa fa-search"></i><br>View More</button>
-											  </div>
-											</div>
-										</div>
-									  <h2>John Thomson</h2>
-									  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet.</p>
 									</div>
 								</li>
 							</ul>
@@ -239,90 +227,20 @@
 			</div> 
 			<div class="md-overlay"></div>
 			<!-- /Example Speaker -->
-			<!-- Example Speaker -->
-			<div class="md-modal md-effect-9" id="modal-4">
-				<div class="md-content">
-					<div class="folio">
-						<div class="avatar4"></div>
-						<div class="sp-name"><strong>Mark Anderson</strong><br/>Director, ABC</div>
-						<div class="sp-dsc">
-						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.
-							<blockquote>
-							<p>Here is a long quotation here is a long quotation proin gravida nibh vel velit auctor aliquet aenean sollicitudin.</p>
-							</blockquote>
-						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-						</div>
-						<div class="sp-social">
-							<ul>
-								<li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="social-btn"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-							</ul>
-						</div>
-						<button class="md-close"><i class="fa fa-times"></i></button>
-					</div>
-				</div>
-			</div> 
-			<div class="md-overlay"></div>
-			<!-- /Example Speaker -->
-			<!-- Example Speaker -->
-			<div class="md-modal md-effect-9" id="modal-5">
-				<div class="md-content">
-					<div class="folio">
-						<div class="avatar5"></div>
-						<div class="sp-name"><strong>Mark Anderson</strong><br/>Director, ABC</div>
-						<div class="sp-dsc">
-						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.
-							<blockquote>
-							<p>Here is a long quotation here is a long quotation proin gravida nibh vel velit auctor aliquet aenean sollicitudin.</p>
-							</blockquote>
-						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-						</div>
-						<div class="sp-social">
-							<ul>
-								<li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="social-btn"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-							</ul>
-						</div>
-						<button class="md-close"><i class="fa fa-times"></i></button>
-					</div>
-				</div>
-			</div> 
-			<div class="md-overlay"></div>
-			<!-- /Example Speaker -->
-			<!-- Example Speaker -->
-			<div class="md-modal md-effect-9" id="modal-6">
-				<div class="md-content">
-					<div class="folio">
-						<div class="avatar6"></div>
-						<div class="sp-name"><strong>Mark Anderson</strong><br/>Director, ABC</div>
-						<div class="sp-dsc">
-						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.
-							<blockquote>
-							<p>Here is a long quotation here is a long quotation proin gravida nibh vel velit auctor aliquet aenean sollicitudin.</p>
-							</blockquote>
-						This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-						</div>
-						<div class="sp-social">
-							<ul>
-								<li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="social-btn"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-							</ul>
-						</div>
-						<button class="md-close"><i class="fa fa-times"></i></button>
-					</div>
-				</div>
-			</div> 
-			<div class="md-overlay"></div>
-			<!-- /Example Speaker -->
+
         </section>
 		<!--/SPEAKER-->
 
         
 <?php include_once("./includes/footer.php")?>
 
+	<!-- LANDINGPAGE SLIDER  -->
+    <script type="text/javascript" src="./assets/js/hammer.min.js"></script>	
+		<script type="text/javascript" src="./assets/js/jquery.mobile-1.4.3.js"></script>	
+		<script type="text/javascript" src="./assets/js/jquery.superslides.js"></script>
+
+        		<!-- INITIALIZATION  -->
+		<script type="text/javascript" src="assets/js/init_<?php echo $title?>.js"></script>
 
 	</div>	
 		

@@ -40,10 +40,7 @@
 		<!-- TEAM SLIDER  -->
 		<script type="text/javascript" src="assets/js/jquery.flexslider.js" ></script>
 		
-		<!-- SCHEDULE TABS  -->
-        <script type="text/javascript" src="assets/js/modernizr.js" ></script>
-		<script type="text/javascript" src="assets/js/cbpFWTabs.js" ></script>		
-		
+
 		<!-- SMOOTH SCROLL  -->
 		<script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
 		

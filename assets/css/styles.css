@@ -424,6 +424,11 @@ body{
 	height: 40px;
 }
 
+.navbar-brand img{
+    /* width:70%; */
+    width: 50px;
+}
+
 #bs-navbar-collapse {
 	float: right;
 }
