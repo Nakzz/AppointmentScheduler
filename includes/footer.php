@@ -5,8 +5,8 @@
 				<div class="row">
 					<div class="col-md-6 align-center">
 						<ul class="legals">
-							<li><button class="md-trigger " data-modal="modal-11">Disclaimer</button></li>
-							<li><a href="http://multia.in/">Made in Multia</a></li>
+							<li><button class="md-trigger " data-modal="modal-11">2019</button></li>
+							<li><a href="">Mendota University</a></li>
 						</ul>
 					</div>
 					<div class="md-modal md-effect-9" id="modal-11">
@@ -14,9 +14,9 @@
 							<div class="folio">
 								<div class="sp-name disclaimer"><strong>Disclaimer</strong></div>
 								<div class="sp-dsc disclaim-border">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									Welcome to Diana's, Zexuan, and Caitlin's Project! 
 									<br /><br />
-									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									Enjoy our website. 
 								</div>
 								<button class="md-close"><i class="fa fa-times"></i></button>
 							</div>
