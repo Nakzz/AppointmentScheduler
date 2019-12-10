@@ -1,8 +1,12 @@
 <HTML>
 <HEAD>
-	<TITLE>Update</TITLE>
+	
     <!--General Functions-->
     <?php
+
+    $title= "Update";
+
+
         function write_an_update_area($faculty_id,$category,$connection){
             /*Title*/
             echo ("<h3>Update $category</h3>");
@@ -63,11 +67,27 @@
             echo ("<input name=\"add\"type=\"submit\" value=\"ADD A RECORD\">");
             echo ("</form>");
         }
+
+        include_once("./includes/head.php");
+
     ?>
-</HEAD>
-<BODY>
+</head>
+<body id="top" data-spy="scroll" data-target=".header" data-offset="80">
+      
+      <!--HEADER-->
+
+      <?php include_once("./includes/nav-bar.php") ?>
+
+<!--/HEADER-->
+
+		<!--ABOUT-->	
+        <section class="intro text-left section-padding autoheight" id="intro">
+			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
+				<div class="row">
+					<div class="col-lg-8 about">
+
     <?php
-        include("auth.inc.php");
+        // include("auth.inc.php"); TODO: uncomment later
         include("connect.inc.php");
     ?>
     <!--1. test if username is correct.-->
@@ -103,6 +123,21 @@
         <a href="javascript:;" onclick="parentNode.submit();">return to your Homepage</a>
         <input type="hidden" name="fac_id" value=<?php echo"$loginId"; ?>>
     </form>
+
+    </div>
+				</div>
+			</div>
+        </section>
+		<!--/ABOUT-->	
 	
-</BODY>
-</HTML>
+    <?php include_once("./includes/footer.php")?>
+
+<!-- LANDINGPAGE SLIDER  -->
+<script type="text/javascript" src="./assets/js/hammer.min.js"></script>	
+    <script type="text/javascript" src="./assets/js/jquery.superslides.js"></script>
+
+            <!-- INITIALIZATION  -->
+    <script type="text/javascript" src="assets/js/init_faculty.js"></script>	
+    
+</body>
+</html>

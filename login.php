@@ -90,8 +90,7 @@
 					<div class="input-group col-lg-12 align-center">
                       <input type="text" class="form-control email-add" name="fac_id" placeholder="Enter Faculty id">
                       <input type="text" class="form-control email-add" name="password" placeholder="Enter Password">
-                      
-					  <button class="btn btn-default notify-button"><i class="fa fa-paper-plane"></i><span>Send</span></button>
+					  <button name="submit_button" type="submit" class="btn btn-default notify-button"><i class="fa fa-paper-plane"></i><span>Send</span></button>
 					</div>
 				</form>
 			</div>
