@@ -52,9 +52,9 @@
 		<!--SLIDER-->
 		<div id="slides">
 			<div class="slides-container">
-			  <img src="assets/img/slider/1.jpg" alt="Cinelli">
-			  <img src="assets/img/slider/2.jpg" alt="Surly">
-			  <img src="assets/img/slider/3.jpg" alt="Cinelli">
+			  <img src="assets/img/arts1.jpg" alt="Cinelli">
+			  <img src="assets/img/arts.jpg" alt="Surly">
+			  <img src="assets/img/arts2.jpg" alt="Cinelli">
 			  
 			</div>
 			<nav class="slides-navigation">
@@ -68,7 +68,7 @@
 			<div class="col-lg-12 landing-text-pos align-center">
 				<h1 class="wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="1s">WELCOME TO MENDOTA UNIVERSITY</h1>
 				<hr id="title_hr"/>
-				<p class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Grand Space, Portland. 21-26 Sept 2014</p>
+				<p class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="1s"> Mendota University Center for the Arts</p>
 				<a class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s" data-wow-delay="1.5s" data-scroll href="#intro">Learn more</a>
 			</div>
 		</section>
@@ -80,9 +80,21 @@
 			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
 				<div class="row">
 					<div class="col-lg-8 align-center about">
-						<h1 class="arrow">Center</h1>
+						<h1 class="arrow">What We're About</h1>
 						<hr>
-						<p>Lorem ipsum dolor sit amet, ad eos iriure corpora prodesset. Partem timeam at vim, mel veritus accusata ea. Ius ei dicam inciderint, eleifend deseruisse ei mea. Alia dicam eam te, summo exerci ei mei.Ei sea debet choro omittantur. Ea nam quis aeterno, et usu semper senserit.</p>
+						<p> At Mendota University, being yourself is powerful. We value unique individuals who strive to 
+						be the best they can be. And we accept individuals of all backgrounds. Our students have the capabilities
+						 to learn, teach, and empower others through our school's rigourous academic programs. We rank #1 in 
+						 academics and diversity, according to US News & Reports. 
+						 <br></br> <br></br>
+						 <h1 class="arrow">Ranked #12 Among Undergraduates Arts Program</h1>
+						 <hr>
+						 <p>
+						 The University is an iconic public institution of higher education, boasting nationally ranked schools
+						 and programs, diverse and distinguished faculty, a major academic medical center and proud history as 
+						 a renowned research university. The community and culture of the University are enriched by active student
+						self-governance, sustained commitment to the arts and a robust NCAA Division I Athletics program. </br>
+						 </p>
 					</div>
 				</div>
 			</div>

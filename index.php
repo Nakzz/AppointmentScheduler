@@ -68,7 +68,7 @@
 			<div class="col-lg-12 landing-text-pos align-center">
 				<h1 class="wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="1s">WELCOME TO MENDOTA UNIVERSITY</h1>
 				<hr id="title_hr"/>
-				<p class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Grand Space, Portland. 21-26 Sept 2014</p>
+				<p class="wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Invest in Your Future... <br> Invest In Knowledge</p>
 				<a class="learn-more-btn btn-effect wow animated fadeIn" data-wow-duration="0.5s" data-wow-delay="1.5s" data-scroll href="#intro">Learn more</a>
 			</div>
 		</section>
@@ -80,9 +80,11 @@
 			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
 				<div class="row">
 					<div class="col-lg-8 align-center about">
-						<h1 class="arrow">ABOUT THE PROJECT</h1>
+						<h1 class="arrow">ABOUT US</h1>
 						<hr>
-						<p>Lorem ipsum dolor sit amet, ad eos iriure corpora prodesset. Partem timeam at vim, mel veritus accusata ea. Ius ei dicam inciderint, eleifend deseruisse ei mea. Alia dicam eam te, summo exerci ei mei.Ei sea debet choro omittantur. Ea nam quis aeterno, et usu semper senserit.</p>
+						<p>The University is an iconic public institution of higher education, boasting nationally ranked schools and programs, diverse and distinguished faculty, a major academic medical center and proud history as a renowned research university. The community and culture of the University are enriched by active student self-governance, sustained commitment to the arts and a robust NCAA Division I Athletics program.
+
+Our impact on individuals, our region and the world is profound — whether we are launching young people into a boundless future or confronting the grand challenges of our time through undaunted research and scholarship.</p>
 					</div>
 				</div>
 			</div>
