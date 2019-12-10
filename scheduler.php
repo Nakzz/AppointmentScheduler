@@ -85,12 +85,12 @@
                             <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
 
 								<div class="accordion">
-									<div class="day">September 15, 2014</div>
+									<div class="day">September 15, 2019</div>
 									<div class="item clearfix">
 										<div class="heading clearfix">
 											<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div>
 											<div class="e-title col-md-9 col-sm-12 col-xs-12">
-												Welcome speech and Overview<br/>
+												Office Hours<br/>
 												<span class="name">Andrew Yang - </span>
 												<span class="speaker-designaition">CEO, Microsoft</span>
 											</div>
