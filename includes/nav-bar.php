@@ -32,7 +32,6 @@ if(isset($_SESSION['loginID'])){
 				   <div class="collapse navbar-collapse" id="example-navbar-collapse">
 					  <ul class="nav navbar-nav">
                       <li><a href="./index.php">Home</a></li>
-						<li class="<?php echo $loginClassState?>"><a href="./login.php">Login</a></li>
                         <li class="<?php echo $logoutClassState?>" ><a href="./logout.php">Logout</a></li>
                         <li><a href="./scheduler.php">Appointment</a></li>
                         <li><a href="./center.php">Center</a></li>
