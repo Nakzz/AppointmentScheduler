@@ -13,7 +13,7 @@
             /*Title*/
             echo ("<h3>Update $category</h3>");
             /*mysql connection stuff*/
-            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$faculty_id\" AND category=\"$category\" ORDER BY 'display_order' ASC";
+            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$faculty_id\" AND category=\"$category\" ORDER BY display_order ASC";
             $result = mysqli_query($connection,$query_sentence);
             if(!$result){
                 echo "<script type='text/javascript'>alert('connection $blockName failed!');</script>";
