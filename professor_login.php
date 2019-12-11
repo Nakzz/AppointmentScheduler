@@ -9,11 +9,12 @@
 
 
 
-
-include_once("./includes/head.php");
+        include('./includes/ChromePhp.php');
+        include_once("./includes/head.php");
 
 
     include("./includes/connect.inc.php");
+
     function set_session($id,$result_set){
         session_start();
         $sess_id = session_id();
@@ -23,7 +24,9 @@ include_once("./includes/head.php");
         $_SESSION['prof_name']=$row["prof_name"];
     }
 
-    if($_POST['submit_button']){
+    if(isset($_POST['submit_button'])){
+        ChromePhp::log("submit button was pressed");
+
         $usrname=$_POST['username'];
         $passwd=$_POST['password'];
         $query_sentence="SELECT * FROM PROFESSOR WHERE (fac_id=\"$usrname\") AND (passwd=\"$passwd\")";
@@ -88,7 +91,7 @@ include_once("./includes/head.php");
 			<div class="subscribe-overlay"></div>
 			<div class="container wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
 				<!-- <h1>Login</h1> -->
-				<form name="update_form" action="professor_login.php" method="POST" class="center-block align-center col-lg-5 col-md-5 col-sm-10 col-xs-10">
+				<form name="login_form" action="professor_login.php" method="POST" class="center-block align-center col-lg-5 col-md-5 col-sm-10 col-xs-10">
 					<div class="input-group col-lg-12 align-center">
                       <input type="text" class="form-control email-add" name="username" placeholder="Faculty ID">
                       <input type="text" class="form-control email-add" name="password" placeholder="Password">
