@@ -127,7 +127,7 @@
         write_an_addition_area($loginId,$conn);
     ?>
     <br>
-    <form action="faculty.php" method="post">
+    <form action="test_choosing_prof.php" method="post">
         <a href="javascript:;" onclick="parentNode.submit();"><font color=white>return to your Homepage</font></a>
         <input type="hidden" name="fac_id" value=<?php echo"$loginId"; ?>>
     </form>
