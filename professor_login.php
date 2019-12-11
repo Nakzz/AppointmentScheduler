@@ -1,10 +1,20 @@
+
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Login</title>
-</head>
-<body>
-<?php
+	<head>
+
+
+        <?php 
+        $title = "Student_Update";
+
+
+
+        include('./includes/ChromePhp.php');
+        include_once("./includes/head.php");
+
+
     include("./includes/connect.inc.php");
+
     function set_session($id,$result_set){
         session_start();
         $sess_id = session_id();
@@ -14,7 +24,9 @@
         $_SESSION['prof_name']=$row["prof_name"];
     }
 
-    if($_POST['submit_button']){
+    if(isset($_POST['submit_button'])){
+        ChromePhp::log("submit button was pressed");
+
         $usrname=$_POST['username'];
         $passwd=$_POST['password'];
         $query_sentence="SELECT * FROM PROFESSOR WHERE (fac_id=\"$usrname\") AND (passwd=\"$passwd\")";
@@ -39,12 +51,94 @@
         }
     }
     mysqli_close($conn);
-?>
-<h2>Login</h2>
-<form name="login_form" action="professor_login.php" method="POST">
-    fac_id:  <input name="username" type="text" size="20"></br>
-    password:  <input name="password" type="text" size="20"></br>
-    <input name="submit_button" type="submit" value="submit">
-</form>
-</body>
+
+
+        ?>      
+
+        <!-- TITLE -->
+	
+	</head>
+	   
+   <body id="top" data-spy="scroll" data-target=".header" data-offset="80">
+	  
+
+		<!--HEADER-->
+
+<?php include_once("./includes/nav-bar.php") ?>
+
+
+
+<!--/HEADER-->
+        
+        
+        		<!--ABOUT-->	
+                <section class="intro text-center section-padding" id="intro">
+			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
+				<div class="row">
+					<div class="col-lg-8 align-center about">
+						<h1> Login </h1>
+						<hr>
+						<!-- <p>Lorem ipsum dolor sit amet, ad eos iriure corpora prodesset. Partem timeam at vim, mel veritus accusata ea. Ius ei dicam inciderint, eleifend deseruisse ei mea. Alia dicam eam te, summo exerci ei mei.Ei sea debet choro omittantur. Ea nam quis aeterno, et usu semper senserit.</p> -->
+					</div>
+				</div>
+			</div>
+        </section>
+		<!--/ABOUT-->
+        
+
+					<!--SUBSCRIBE-->	
+                    <section class="subscribe section-padding text-center ">
+			<div class="subscribe-overlay"></div>
+			<div class="container wow animated fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
+				<!-- <h1>Login</h1> -->
+				<form name="login_form" action="professor_login.php" method="POST" class="center-block align-center col-lg-5 col-md-5 col-sm-10 col-xs-10">
+					<div class="input-group col-lg-12 align-center">
+                      <input type="text" class="form-control email-add" name="username" placeholder="Faculty ID">
+                      <input type="text" class="form-control email-add" name="password" placeholder="Password">
+                      
+					  <button name="submit_button" type="submit" class="btn btn-default notify-button"><i class="fa fa-paper-plane"></i><span>Send</span></button>
+					</div>
+				</form>
+			</div>
+        </section>
+		<!-- /SUBSCRIBE -->
+		
+
+        
+<?php include_once("./includes/footer.php")?>
+		<script type="text/javascript" src="assets/js/init_Faculty.js"></script>
+
+
+
+	</div>	
+		
+    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
