@@ -17,8 +17,50 @@ if($actionCode==1){
     $keyword="DELETE";
 }
 
-        //
-        include_once("./includes/head.php");
+include("./includes/connect.inc.php");
+include_once("./includes/head.php");
+include('./includes/ChromePhp.php');
+
+if(isset($_POST['submit_button'])){
+
+    ChromePhp::log("Post submit");
+    
+    $student_4digit = $_POST['student_4digit'];
+    $student_lname = $_POST['student_lname'];
+    $sentence;
+    
+    if ($actionCode==1){
+        $sentence = "UPDATE RECORD SET student_4_digit=\"$student_4digit\", student_lname=\"$student_lname\" WHERE record_id=\"$record_id\"";
+    }elseif($actionCode==2){
+        $sentence = "UPDATE RECORD SET student_4_digit=NULL, student_lname=NULL WHERE (record_id=\"$record_id\") AND (student_4_digit=\"$student_4digit\") AND (student_lname=\"$student_lname\")";
+    }
+
+    $result = mysqli_query($conn, $sentence);
+    if (!$result){
+        die("cannot processed select query");
+    }
+    elseif(mysqli_affected_rows($conn)<=0){
+
+        ChromePhp::log("Sql query was made succ");
+
+        if($actionCode==1){
+            echo "<script type='text/javascript'>alert('Unknown failure');</script>";
+            echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=scheduler.php\">";
+        }
+        elseif($actionCode==2){
+            echo "<script type='text/javascript'>alert('4 digit id or lastname mismatch!');</script>";
+            echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=scheduler.php\">";
+        }
+    }else{
+        echo "<script type='text/javascript'>alert('Successfully Updated!');</script>";
+        echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=scheduler.php\">";
+    }
+}
+
+ChromePhp::log("Past _POST");
+ChromePhp::log($_POST);
+
+
 
         ?>      
 
@@ -33,37 +75,6 @@ if($actionCode==1){
 
 <?php include_once("./includes/nav-bar.php") ?>
 
-<?php
-    include("./includes/connect.inc.php");
-    if($_POST['submit_button']){
-        $student_4digit = $_POST['student_4digit'];
-        $student_lname = $_POST['student_lname'];
-        $sentence;
-        
-        if ($actionCode==1){
-            $sentence = "UPDATE RECORD SET student_4_digit=\"$student_4digit\", student_lname=\"$student_lname\" WHERE record_id=\"$record_id\"";
-        }elseif($actionCode==2){
-            $sentence = "UPDATE RECORD SET student_4_digit=NULL, student_lname=NULL WHERE (record_id=\"$record_id\") AND (student_4_digit=\"$student_4digit\") AND (student_lname=\"$student_lname\")";
-        }
-        $result = mysqli_query($conn, $sentence);
-        if (!$result){
-            die("cannot processed select query");
-        }
-        elseif(mysqli_affected_rows($conn)<=0){
-            if($actionCode==1){
-                echo "<script type='text/javascript'>alert('Unknown failure');</script>";
-                echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=scheduler.php\">";
-            }
-            elseif($actionCode==2){
-                echo "<script type='text/javascript'>alert('4 digit id or lastname mismatch!');</script>";
-                echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=scheduler.php\">";
-            }
-        }else{
-            echo "<script type='text/javascript'>alert('Successfully Updated!');</script>";
-            echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=scheduler.php\">";
-        }
-    }
-?>
 
 
 <!--/HEADER-->
@@ -93,8 +104,8 @@ if($actionCode==1){
 					<div class="input-group col-lg-12 align-center">
                       <input type="text" class="form-control email-add" name="student_4digit" placeholder="Enter StudentID last 4 digits:">
                       <input type="text" class="form-control email-add" name="student_lname" placeholder="Enter Student LastName">
-                      <input name="record_id" type="hidden" value="<?php echo $record_id ?>" >
-                      <input name="actionCode" type="hidden" value="<?php echo $actionCode ?>" >
+                      <input name="record_id" type="hidden" value="<?php echo $record_id ?>">
+                      <input name="actionCode" type="hidden" value="<?php echo $actionCode ?>">
 					  <button name="submit_button" type="submit" class="btn btn-default notify-button"><i class="fa fa-paper-plane"></i><span>Send</span></button>
 					</div>
 				</form>
