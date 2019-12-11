@@ -34,6 +34,21 @@
             $addSentence = " AND record_date=\"$selected_time\"";
         }
     ?>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".header" data-offset="80">
+	  
+
+      <!--HEADER-->
+
+<?php include_once("./includes/nav-bar.php") ?>
+
+
+<section class="intro text-left section-padding autoheight" id="intro">
+			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
+				<div class="row">
+					<div class="col-lg-8 about">
+
     <?php
     function addARecord($row){
         $record_id = $row['record_id'];
@@ -80,13 +95,7 @@
     }
 
     ?>
-</head>
-<body id="top" data-spy="scroll" data-target=".header" data-offset="80">
-	  
 
-      <!--HEADER-->
-
-<?php include_once("./includes/nav-bar.php") ?>
 <?php
     //authorization part
     session_start();
@@ -124,10 +133,7 @@
     
     
 ?>  
-<section class="intro text-left section-padding autoheight" id="intro">
-			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
-				<div class="row">
-					<div class="col-lg-8 about">
+
 
     <FORM name="selectDae" action=professor_cPanel.php method=POST>
         <label for="start">Select Date You'd like to see:</label>
