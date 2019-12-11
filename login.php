@@ -13,12 +13,13 @@
             session_start();
             $sess_id = session_id();
             $_SESSION['loginID']=$id;
-            $_SESSION['pageID']=$pageid;
             $_SESSION['miscellaneous']="f*ckyou";
     
         }
         if(isset($_POST['page_fac_id'])){
             $page_fac_id=$_POST['page_fac_id'];
+            session_start();
+            $_SESSION['pageID']=$page_fac_id;
         }else{
             // die("can't get faculty id from page!");
         }
