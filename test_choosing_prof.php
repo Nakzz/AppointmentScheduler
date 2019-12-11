@@ -36,12 +36,25 @@
 				<div class="row">
 					<div class="col-lg-8 align-center about">
 
-                    <h1>Hi</h1>
+                    <h1>Our Faculty</h1>
+                    
+                    <h3> At Mendota University, our world-renowned faculty of scholars, artists, and designers delve deep into critical inquiry 
+						every day to solve some of the world’s most pressing issues. Using various methodologies, these community leaders 
+						ask questions that spark curiosity and open up possibilities. Our students are welcomed to collaborate with 
+						faculty, ideating together to reimagine a more sustainable future. Change begins with a question. 
+						What will you ask?</h3>
+						
+<br> </br>
 
-                    <form action="faculty.php" method="post">
-        <a href="javascript:;" onclick="parentNode.submit();">admin 1</a>
+        <form action="faculty.php" method="post">
+        <a href="javascript:;" onclick="parentNode.submit();">Meghan Mitchell</a> <br></br>
+       
         <input type="hidden" name="fac_id" value=testAdmin>
-    </form>
+        <a href="javascript:;" onclick="parentNode.submit();">Krista-Lee Malone</a>
+         <input type="hidden" name="fac_id" value=testAdmin>
+        
+  	   </form>
+  	   
 					</div>
 				</div>
 			</div>
