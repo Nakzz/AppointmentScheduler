@@ -9,8 +9,13 @@
 
 
         include("connect.inc.php");
+        include('./includes/ChromePhp.php');
+
         function set_session($id,$pageid){
             session_start();
+            ChromePhp::log("trying to set pageid!");
+            ChromePhp::log($pageid);
+
             $sess_id = session_id();
             $_SESSION['loginID']=$id;
             $_SESSION['pageID']=$pageid;
@@ -18,10 +23,14 @@
     
         }
         if(isset($_POST['page_fac_id'])){
+            ChromePhp::log("page_fac_is is set!");
             $page_fac_id=$_POST['page_fac_id'];
+            ChromePhp::log($page_fac_id);
+
         }else{
             // die("can't get faculty id from page!");
         }
+
         if(isset($_POST['submit_button'])){
             $usrname=$_POST['fac_id'];
             $passwd=$_POST['password'];
@@ -38,6 +47,8 @@
                 }elseif($num==1){
                     echo "<script type='text/javascript'>alert('Logged in!');</script>";
                     echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=update.php\">";
+                    ChromePhp::log("before calling set+session function");
+                    ChromePhp::log($page_fac_id);
                     set_session($usrname,$page_fac_id);
                     exit;
                 }else{
