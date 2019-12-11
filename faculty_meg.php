@@ -15,7 +15,7 @@
 
 
         /*Collect fac_id*/
-        $fac_id="testAdmin";
+        $fac_id="mmitchell";
         /*Universal Functions*/
         function write_if_not_blank($showName,$value){
             if(!empty($value)){
@@ -90,7 +90,7 @@
                      <!--b. present info-->
     <form action="login.php" method="post">
         <a href="javascript:;" onclick="parentNode.submit();"><?php echo"<h1 class=\"arrow\"> Meghan Mitchell </h1>"; ?></a>
-        <input type="hidden" name="page_fac_id" value=testAdmin>
+        <input type="hidden" name="page_fac_id" value=mmitchell>
     </form>
     <?php
         // echo ("<img src=\"$prof_img_loc\">"); TODO: remove when proper image path comes
