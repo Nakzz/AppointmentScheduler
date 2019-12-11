@@ -230,7 +230,7 @@
 									?>
 								  
 								</div>
-								<p> <?php echo  $available_slot ." spots available for " ?> </p>        
+								<p> <?php echo  $available_slot ." spots available for ";$available_slot=0; ?> </p>        
 							</div><!--CONTAINER ENDS-->
 						</section>
 						<section id="section-2">
@@ -263,7 +263,7 @@
 									?>
 
 								</div> 
-								<p> <?php echo  $available_slot ." spots available for " ?> </p>         
+								<p> <?php echo  $available_slot ." spots available for ";$available_slot=0; ?> </p>         
 							</div>
 						</section>
 						<section id="section-3">
@@ -295,7 +295,7 @@
 									}
 									?>
 								</div>  
-								<p> <?php echo  $available_slot ." spots available for " ?> </p>        
+								<p> <?php echo  $available_slot ." spots available for ";$available_slot=0; ?> </p>        
 							</div>
 						</section>
 						<section id="section-4">
@@ -329,7 +329,7 @@
 
 									
 								</div>    
-								<p> <?php echo  $available_slot ." spots available for " ?> </p>      
+								<p> <?php echo  $available_slot ." spots available for "; $available_slot=0; ?> </p>      
 							</div>   
 						</section>
 						<section id="section-5">
@@ -362,7 +362,9 @@
 									?>
 								  
 								</div>
-								<p> <?php echo  $available_slot ." spots available for " ?> </p>          
+								<p> <?php echo  $available_slot ." spots available for ";
+								$available_slot=0;
+								 ?> </p>          
 							</div>
 						</section>
 					</div><!-- /content -->
