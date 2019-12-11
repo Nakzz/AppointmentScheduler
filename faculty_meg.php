@@ -3,11 +3,15 @@
 
     
     <?php
-
+                     // DEBUG ONLY
+                    //  include('./includes/ChromePhp.php');
     $title = "Faculty";
 
     include_once("./includes/head.php");
     include_once("./includes/connect.inc.php");
+
+
+                    //  ChromePhp::log("Chromephp added");
 
 
         /*Collect fac_id*/
@@ -21,7 +25,7 @@
         function write_a_block($facid,$blockName,$connection){
             /*try get all active items in the block with sql*/
             /* MySQL query */
-            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$facid\" AND category=\"$blockName\" AND active=\"1\" ORDER BY 'display_order' ASC";
+            $query_sentence="SELECT description FROM ITEMS WHERE fac_id=\"$facid\" AND category=\"$blockName\" AND active=\"1\" ORDER BY display_order ASC";
             $result = mysqli_query($connection,$query_sentence);
             if(!$result){
                 echo "<script type='text/javascript'>alert('connection $blockName failed!');</script>";
@@ -29,9 +33,15 @@
             }
             /*Process sql result */
             $rowNum = mysqli_num_rows($result);
+
+
             if($rowNum>0){
                 echo ("<h2>$blockName</h2>");
-                while ($row = mysqli_fetch_assoc($result)) {
+
+
+                while ($row = mysqli_fetch_array($result)) {
+                    // ChromePhp::log($row);
+
                     $description_in = $row ['description'];
                     echo "<p>$description_in</p>";
                 }

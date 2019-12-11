@@ -8,6 +8,10 @@
 
     include_once("./includes/head.php");
 
+    
+                 // DEBUG ONLY
+                 include('./includes/ChromePhp.php');
+                 
 
         /*Collect fac_id*/
         $fac_id=$_POST['fac_id'];
@@ -30,6 +34,7 @@
             $rowNum = mysqli_num_rows($result);
             if($rowNum>0){
                 echo ("<h2>$blockName</h2>");
+                ChromePhp::log($result);
                 while ($row = mysqli_fetch_assoc($result)) {
                     $description_in = $row ['description'];
                     echo "<p>$description_in</p>";

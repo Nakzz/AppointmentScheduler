@@ -13,7 +13,7 @@
             /*Title*/
             echo ("<h3>Update $category</h3>");
             /*mysql connection stuff*/
-            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$faculty_id\" AND category=\"$category\" ORDER BY 'display_order' ASC";
+            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$faculty_id\" AND category=\"$category\" ORDER BY display_order ASC";
             $result = mysqli_query($connection,$query_sentence);
             if(!$result){
                 echo "<script type='text/javascript'>alert('connection $blockName failed!');</script>";
@@ -127,7 +127,7 @@
         write_an_addition_area($loginId,$conn);
     ?>
     <br>
-    <form action="faculty.php" method="post">
+    <form action="test_choosing_prof.php" method="post">
         <a href="javascript:;" onclick="parentNode.submit();"><font color=white>return to your Homepage</font></a>
         <input type="hidden" name="fac_id" value=<?php echo"$loginId"; ?>>
     </form>
