@@ -255,11 +255,15 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 
-								</div>        
+								</div> 
+								<p> <?php echo  $available_slot ." spots available for " ?> </p>         
 							</div>
 						</section>
 						<section id="section-3">
@@ -284,10 +288,14 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
-								</div>        
+								</div>  
+								<p> <?php echo  $available_slot ." spots available for " ?> </p>        
 							</div>
 						</section>
 						<section id="section-4">
@@ -312,12 +320,16 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 
 									
-								</div>        
+								</div>    
+								<p> <?php echo  $available_slot ." spots available for " ?> </p>      
 							</div>   
 						</section>
 						<section id="section-5">
@@ -342,11 +354,15 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 								  
-								</div>        
+								</div>
+								<p> <?php echo  $available_slot ." spots available for " ?> </p>          
 							</div>
 						</section>
 					</div><!-- /content -->
