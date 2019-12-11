@@ -45,12 +45,28 @@
 						What will you ask?</h3>
 						
 <br> </br>
+<center><table border="3">
+	<tr>
+		<td>
+    		<input type="hidden" name="fac_id" value=testAdmin>
+        	<img src="assets/img/krista.jpg" width="115" height="130" alt="" /> 
+        	<center><a href="javascript:;" onclick="parentNode.submit();"><font color=white>Krista-Lee Malone <br></br></font></a> </center>
+    	</td>
+		
+ 		<td>
+ 			<p> <br> </br> <br></p>
 
-        <form action="faculty.php" method="post">
-        <a href="javascript:;" onclick="parentNode.submit();"><font color=white> Meghan Mitchell</font></a> <br></br>
-        <a href="javascript:;" onclick="parentNode.submit();"><font color=white>Krista-Lee Malone</font></a>
-        <input type="hidden" name="fac_id" value=testAdmin>
-        
+ 		</td>
+ 		<td>
+        	<form action="faculty.php" method="post">
+        	<img src="assets/img/meghan.jpg" width="105" height="130" alt="" /> 
+    		<a href="javascript:;" onclick="parentNode.submit();"><font color=white><center> Meghan Mitchell </center><br></br></font></a>
+ 		</td>
+ 	
+    </tr>
+</table>
+</center>
+
   	   </form>
   	   
 					</div>
