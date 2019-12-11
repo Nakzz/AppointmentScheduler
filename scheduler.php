@@ -238,7 +238,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-03\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-03\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -271,7 +271,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-04\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-04\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -303,7 +303,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-05\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-05\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -337,7 +337,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-06\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-06\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
