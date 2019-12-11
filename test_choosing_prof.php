@@ -45,12 +45,14 @@
 						What will you ask?</h3>
 						
 <br> </br>
-
-        <form action="faculty.php" method="post">
+		<form action="faculty_meg.php" method="post">
         <a href="javascript:;" onclick="parentNode.submit();"><font color=white> Meghan Mitchell</font></a> <br></br>
+        </form>
+        
+        <form action="faculty_krista.php" method="post">
         <a href="javascript:;" onclick="parentNode.submit();"><font color=white>Krista-Lee Malone</font></a>
         <input type="hidden" name="fac_id" value=testAdmin>
-        
+         
   	   </form>
   	   
 					</div>
