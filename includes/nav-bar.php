@@ -35,7 +35,7 @@ if(isset($_SESSION['loginID'])){
                         <li class="<?php echo $logoutClassState?>" ><a href="./logout.php">Logout</a></li>
                         <li><a href="./scheduler.php">Appointment</a></li>
                         <li><a href="./center.php">Center</a></li>
-                        <li><a href="./faculty.php">Faculty</a></li>
+                        <li><a href="./test_choosing_prof.php">Faculty</a></li>
 
 					  </ul>
 				   </div>
