@@ -222,7 +222,7 @@
 										$available_slot = 0;
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
-											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
 												$available_slot ++;
 											}
 										}
@@ -255,7 +255,7 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
-											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
 												$available_slot ++;
 											}
 										}
@@ -288,7 +288,7 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
-											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
 												$available_slot ++;
 											}
 										}
@@ -320,7 +320,7 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
-											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
 												$available_slot ++;
 											}
 										}
@@ -354,7 +354,7 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
-											if(($row['is_available']==1)&&(empty($row['student_4digit']))){
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
 												$available_slot ++;
 											}
 										}
