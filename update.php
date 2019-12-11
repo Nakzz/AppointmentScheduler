@@ -119,8 +119,9 @@
     <?php
         write_an_addition_area($loginId,$conn);
     ?>
+    <br>
     <form action="faculty.php" method="post">
-        <a href="javascript:;" onclick="parentNode.submit();">return to your Homepage</a>
+        <a href="javascript:;" onclick="parentNode.submit();"><font color=white>return to your Homepage</font></a>
         <input type="hidden" name="fac_id" value=<?php echo"$loginId"; ?>>
     </form>
 
