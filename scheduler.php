@@ -154,12 +154,17 @@
 					<div class="content">
 					<form name="selfForm" action="scheduler.php" method="POST">
 						<select name="prof_name">
-							<option>ALL</option>
+							<option>CHOOSE A PROFESSOR</option>
 							<option>PROF 1</option>
+							<option>PROF 2</option>
 						</select>
 						<input name="submit_self" type="submit" value="submit">
+						<br>
+						</br>
+						
+							
 					</form>
-
+						 <a href="professor_login.php">  <p >Click <span style="color: blue"> Here </span> for Professor Login </p>  </a> <br>
 					<?php 
 					$professor_name = $_POST['prof_name'];
 					$prof_sentence;
