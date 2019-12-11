@@ -6,6 +6,8 @@
 
     $title= "Update";
 
+        include('./includes/ChromePhp.php');
+        ChromePhp::log('hello world');
 
         function write_an_update_area($faculty_id,$category,$connection){
             /*Title*/
@@ -92,8 +94,12 @@
     ?>
     <!--1. test if username is correct.-->
     <?php
+        session_start();
         $loginId = $_SESSION['loginID'];
         $pageId = $_SESSION['pageID'];
+
+        ChromePhp::log($loginId);
+        ChromePhp::log($pageId);
         if ($loginId != $pageId){
             echo "<script type='text/javascript'>alert('Not your page! You'll be signed out.');</script>";
             echo "<META HTTP-EQUIV=\"refresh\" content=\"2; URL=logout.php\">";
