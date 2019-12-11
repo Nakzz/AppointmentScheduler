@@ -134,7 +134,7 @@
     
 ?>  
 
-
+<br></br>
     <FORM name="selectDae" action=professor_cPanel.php method=POST>
         <label for="start">Select Date You'd like to see:</label>
         <input type="date" id="start" name="trip_start"
@@ -148,8 +148,8 @@
         <input type="date" id="date" name="trip_start"
         value="2019-12-02"
         min="2019-12-02" max="2019-12-06"></br>
-        Start Time<input type="text" size="10" maxlength="40" name="start_time"></br>
-        End Time<input type="text" size="10" maxlength="40" name="end_time"></br>
+        Start Time: <input type="text" size="10" maxlength="40" name="start_time"></br>
+        End Time: <input type="text" size="10" maxlength="40" name="end_time"></br>
         <input type="hidden"  name="fac_id" value = "<?php echo($_SESSION['loginID']); ?>"></br>
         <input type="submit" name="addNewRecord" value="SUBMIT"> 
         
