@@ -21,19 +21,96 @@
 
 
 
-        $query = "SELECT * FROM FACULTY WHERE fac_id=\"testAdmin\""; // TODO: get all the appointentments
+        $query = "SELECT * FROM FACULTY WHERE fac_id=\"testAdmin\"";
         $result = mysqli_query($conn, $query);
         if (!$result){
             die("cannot processed select query");
         }
         $row = mysqli_fetch_assoc($result);
 
-		//TODO: sort the result for each day
+
+        //TODO: update this
+        $spotAvailable = 0;
 
 
+        //
         include_once("./includes/head.php");
 
-        ?>      
+        ?>  
+
+		<!-- Universal Functions -->
+		<?php
+
+		include ("./includes/tagWriter.php");
+
+		function redirectToUpdate($sendingId,$startTime,$endTime,$sentence,$actionCode){
+			echo ("<form action=\"student_updateAppointment.php\" method=\"post\">");
+			echo ("<a href=\"javascript:;\" onclick=\"parentNode.submit();\"><p>$sentence</p></a>");
+			echo ("<input type=\"hidden\" name=\"record_id\" value=$sendingId>");
+			echo ("<input type=\"hidden\" name=\"actionCode\" value=$actionCode>");
+			echo ("</form>");
+		}
+
+
+		function addARecord($row){
+			$record_id = $row['record_id'];
+			$is_available = $row['is_available'];
+			$student_4digit = $row['student_4_digit'];
+			$startTime = $row['record_starttime'];
+			$endTime = $row['record_endtime'];
+			$student_lastName = $row['student_lname'];
+			$fac_id = $row['fac_id'];
+			Functions::startTagwithClass("div","item clearfix");
+				Functions::startTagwithClass("div","heading clearfix");
+					Functions::startTagwithClass("div","time col-md-3 col-sm-12 col-xs-12");
+					echo ("$startTime - $endTime");
+					Functions::endTag("div");
+					Functions::startTagwithClass("div","e-title col-md-9 col-sm-12 col-xs-12");
+					if($is_available==1){
+						if(empty($student_4digit)){
+							echo ("Available!</br>");
+						}else{
+							echo ("Reserved</br>");
+						}
+						
+					}else{
+						echo ("Locked by Professor</br>");
+					}
+						Functions::startTagwithClass("span","name");
+						if($is_available==1){
+							if(empty($student_4digit)){
+								echo ("You can add an appointment.");
+							}else{
+								echo ($student_lastName);
+							}
+						}else{
+							echo ("This section is locked by professor.");
+						}
+						Functions::endTag("span");
+					Functions::endTag("div");
+				Functions::endTag("div");
+				Functions::startTagwithClass("div","col-md-12 col-sm-12 col-xs-12");
+					Functions::startTagwithClass("div","content venue col-md-3 col-sm-12 col-xs-12");
+					echo ("Options:");
+					Functions::endTag("div");
+					Functions::startTagwithClass("div","content details col-md-9 col-sm-12 col-xs-12");
+					if($is_available==1){
+						if(empty($student_4digit)){
+							redirectToUpdate($record_id,$startTime,$endTime,"Click HERE to SCHEDULE an appointment.",1);
+						}else{
+							redirectToUpdate($record_id,$startTime,$endTime,"Click HERE to DELETE this appointment.",2);
+						}
+					}else{
+						echo ("This section is locked. No options currently available.");
+					}
+					Functions::endTag("div");
+				Functions::endTag("div");
+			Functions::endTag("div");
+
+		}
+		
+
+		?>
 
        
 	
@@ -44,7 +121,8 @@
 
 		<!--HEADER-->
 
-<?php include_once("./includes/nav-bar.php") ?>
+	<?php include_once("./includes/nav-bar.php") ?>
+	
 
 		<!--/HEADER-->
 		
@@ -74,259 +152,183 @@
 						</ul>
 					</nav>
 					<div class="content">
-						
+					<form name="selfForm" action="scheduler.php" method="POST">
+						<select name="prof_name">
+							<option>ALL</option>
+							<option>PROF 1</option>
+						</select>
+						<input name="submit_self" type="submit" value="submit">
+					</form>
+
 					<?php 
-					
+					$professor_name = $_POST['prof_name'];
+					$prof_sentence;
+						switch($professor_name){
+							case "ALL":
+								$prof_sentence="";
+								break;
+							case "PROF 1":
+								$prof_sentence=" AND (fac_id=\"testAdmin\")";
+								break;
 
-				// 	<section id="section-i">	// THIS IS THE INDEX OF THE OUTTERMOST ARRAY
-				// 	<div class="container">
-				// 	<p> <?php echo  $spotAvailable ." spots available for "  </p>	// IF YOU WANT TO CALCULATE EACH DAY'S UNBOOKED APPOINTMENT TIMES
-
-				// 		<div class="accordion">
-				// 			<div class="day">September 15, 2014</div>	// DAY FOR THAT OUTTER ARRAY
-
-				// INNER LOOP 
-
-				// 			<div class="item clearfix"> 
-				// 				<div id="$ID_OF_THE_APPOINTMENT" class="heading clearfix"> // very important, uses javascript in bottom of the page to redirect page
-				// 					<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div> // TIME GOES HERE
-				// 					<div class="e-title col-md-9 col-sm-12 col-xs-12">
-				// 						Welcome speech and Overview<br/> //TEXT
-				// 						<span class="name">Andrew Yang - </span> // TEXT
-				// 						<span class="speaker-designaition">CEO, Microsoft</span>  // TEXT
-				// 					</div>
-				// 				</div>
-				// 			</div>
-						  
-				// INNER LOOP ENDS
-
-				// 		</div>        
-				// 	</div><!--CONTAINER ENDS-->
-				// </section>
-
-					
+						}
 					?>
+                        
+                    	<section id="section-1">
 
-                    <section id="section-1">
+					
+
+
 							<div class="container">
-                            <p> <?php //echo  $spotAvailable ." spots available for " ?> </p>
+                            <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
 
 								<div class="accordion">
-									<div class="day">September 15, 2014</div>	
 
 
-									<div class="item clearfix">
-										<div id="566" class="heading clearfix">
-											<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">
-												Office Hours<br/>
-												<span class="name">Andrew Yang - </span>
-												<span class="speaker-designaition">CEO, Microsoft</span>
-											</div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">11:30am - 1:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">The Standardistas are lecturers in interactive design<br/><span class="name">Andrew Yang - </span><span class="speaker-designaition">CEO, Microsoft</span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">1:00pm - 2:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Catered Lunch<br/><span class="name">Sponsered </span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">3:00pm - 4:30pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Proin gravida nibh vel velit auctor aliquet<br/><span class="name">Mary Doe - </span><span class="speaker-designaition">Lead Designer, Microsoft</span></div>
-										</div>
+								<?php
+								//test
+								$query_sentence="SELECT * FROM RECORD WHERE (record_date=\"2019-12-02\")".$prof_sentence;
+								$result = mysqli_query($conn, $query_sentence);
+								if (!$result){
+									die("cannot processed select queryThis");
+								}
+								
+								?>
 
-									</div>
+									<div class="day">December 02, 2019</div>
+										
+									<?php
+									$rowNum = mysqli_num_rows($result);
+										
+									if($rowNum==0){
+										echo("<p>No Timeslot this day</p>");
+									}else{
+										
+										while($row = mysqli_fetch_assoc($result)){
+											addARecord($row);
+										}
+									}
+									?>
+								  
 								</div>        
 							</div><!--CONTAINER ENDS-->
 						</section>
-
 						<section id="section-2">
 							<div class="container">
-                            <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
-
 								<div class="accordion">
-									<div class="day">September 15, 2014</div>
+								<?php
+								//Data
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-03\"";
+								$result = mysqli_query($conn, $query_sentence);
+								if (!$result){
+									die("cannot processed select queryThis");
+								}
+								?>
+									<div class="day">December 03, 2019</div>
+									<?php
+									//Show
+									$rowNum = mysqli_num_rows($result);
+										
+									if($rowNum==0){
+										echo("<p>No Timeslot this day</p>");
+									}else{
+										
+										while($row = mysqli_fetch_assoc($result)){
+											addARecord($row);
+										}
+									}
+									?>
 
-
-									<div class="item clearfix">
-										<div id="566" class="heading clearfix">
-											<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">
-												Welcome speech and Overview<br/>
-												<span class="name">Andrew Yang - </span>
-												<span class="speaker-designaition">CEO, Microsoft</span>
-											</div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">11:30am - 1:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">The Standardistas are lecturers in interactive design<br/><span class="name">Andrew Yang - </span><span class="speaker-designaition">CEO, Microsoft</span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">1:00pm - 2:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Catered Lunch<br/><span class="name">Sponsered </span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">3:00pm - 4:30pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Proin gravida nibh vel velit auctor aliquet<br/><span class="name">Mary Doe - </span><span class="speaker-designaition">Lead Designer, Microsoft</span></div>
-										</div>
-
-									</div>
 								</div>        
-							</div><!--CONTAINER ENDS-->
+							</div>
 						</section>
-
 						<section id="section-3">
 							<div class="container">
-                            <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
-
 								<div class="accordion">
-									<div class="day">September 15, 2014</div>
-
-
-									<div class="item clearfix">
-										<div id="566" class="heading clearfix">
-											<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">
-												Welcome speech and Overview<br/>
-												<span class="name">Andrew Yang - </span>
-												<span class="speaker-designaition">CEO, Microsoft</span>
-											</div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">11:30am - 1:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">The Standardistas are lecturers in interactive design<br/><span class="name">Andrew Yang - </span><span class="speaker-designaition">CEO, Microsoft</span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">1:00pm - 2:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Catered Lunch<br/><span class="name">Sponsered </span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">3:00pm - 4:30pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Proin gravida nibh vel velit auctor aliquet<br/><span class="name">Mary Doe - </span><span class="speaker-designaition">Lead Designer, Microsoft</span></div>
-										</div>
-
-									</div>
+								<?php
+								//Data
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-04\"";
+								$result = mysqli_query($conn, $query_sentence);
+								if (!$result){
+									die("cannot processed select queryThis");
+								}
+								?>
+									<div class="day">December 04, 2019</div>
+									<?php
+									//Show
+									$rowNum = mysqli_num_rows($result);
+										
+									if($rowNum==0){
+										echo("<p>No Timeslot this day</p>");
+									}else{
+										
+										while($row = mysqli_fetch_assoc($result)){
+											addARecord($row);
+										}
+									}
+									?>
 								</div>        
-							</div><!--CONTAINER ENDS-->
+							</div>
 						</section>
-						
 						<section id="section-4">
 							<div class="container">
-                            <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
-
 								<div class="accordion">
-									<div class="day">September 15, 2014</div>
+								<?php
+								//Data
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-05\"";
+								$result = mysqli_query($conn, $query_sentence);
+								if (!$result){
+									die("cannot processed select queryThis");
+								}
+								?>
+									<div class="day">December 05, 2019</div>
+									<?php
+									//Show
+									$rowNum = mysqli_num_rows($result);
+										
+									if($rowNum==0){
+										echo("<p>No Timeslot this day</p>");
+									}else{
+										
+										while($row = mysqli_fetch_assoc($result)){
+											addARecord($row);
+										}
+									}
+									?>
 
-
-									<div class="item clearfix">
-										<div id="566" class="heading clearfix">
-											<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">
-												Welcome speech and Overview<br/>
-												<span class="name">Andrew Yang - </span>
-												<span class="speaker-designaition">CEO, Microsoft</span>
-											</div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">11:30am - 1:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">The Standardistas are lecturers in interactive design<br/><span class="name">Andrew Yang - </span><span class="speaker-designaition">CEO, Microsoft</span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">1:00pm - 2:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Catered Lunch<br/><span class="name">Sponsered </span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">3:00pm - 4:30pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Proin gravida nibh vel velit auctor aliquet<br/><span class="name">Mary Doe - </span><span class="speaker-designaition">Lead Designer, Microsoft</span></div>
-										</div>
-
-									</div>
+									
 								</div>        
-							</div><!--CONTAINER ENDS-->
+							</div>   
 						</section>
-						
 						<section id="section-5">
 							<div class="container">
-                            <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
-
 								<div class="accordion">
-									<div class="day">September 15, 2014</div>
-
-
-									<div class="item clearfix">
-										<div id="566" id="566" class="heading clearfix">
-											<div class="time col-md-3 col-sm-12 col-xs-12">9:30am - 11:30am</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">
-												Welcome speech and Overview<br/>
-												<span class="name">Andrew Yang - </span>
-												<span class="speaker-designaition">CEO, Microsoft</span>
-											</div>
-										</div>
-									</div>
+								<?php
+								//Data
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-06\"";
+								$result = mysqli_query($conn, $query_sentence);
+								if (!$result){
+									die("cannot processed select queryThis");
+								}
+								?>
+									<div class="day">December 06, 2019</div>
+									<?php
+									//Show
+									$rowNum = mysqli_num_rows($result);
+										
+									if($rowNum==0){
+										echo("<p>No Timeslot this day</p>");
+									}else{
+										
+										while($row = mysqli_fetch_assoc($result)){
+											addARecord($row);
+										}
+									}
+									?>
 								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">11:30am - 1:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">The Standardistas are lecturers in interactive design<br/><span class="name">Andrew Yang - </span><span class="speaker-designaition">CEO, Microsoft</span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">1:00pm - 2:00pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Catered Lunch<br/><span class="name">Sponsered </span></div>
-										</div>
-									</div>
-								  
-									<div class="item clearfix">
-										<div class="heading">
-											<div class="time col-md-3 col-sm-12 col-xs-12">3:00pm - 4:30pm</div>
-											<div class="e-title col-md-9 col-sm-12 col-xs-12">Proin gravida nibh vel velit auctor aliquet<br/><span class="name">Mary Doe - </span><span class="speaker-designaition">Lead Designer, Microsoft</span></div>
-										</div>
-
-									</div>
 								</div>        
-							</div><!--CONTAINER ENDS-->
+							</div>
 						</section>
-	
 					</div><!-- /content -->
 				</div><!-- /tabs -->
 			</div>
@@ -349,17 +351,19 @@
         
         
 <script>
-	/*******Schedule Accordion *************/
-	
-	$('.accordion .item .heading').click(function(elem) {		
-	
-		console.log(elem.currentTarget.id)
-		window.location.href = `student_login.php?key=${elem.currentTarget.id}`;
-		
+//TODO: remove if not implementation is found
+// window.addEventListener("load", function(){
+
+//     for(let i=1; i<6; i++){
+//         document.getElementById(i).onclick = function(){  console.log(`Clicked ${i}`);
+
+//         window.location.href=`scheduler.php?uid=${i}`;
 
 
-	});
+//     }
 
+// };
+// });
 
 </script>
 	</div>	
