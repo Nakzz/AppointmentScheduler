@@ -100,6 +100,7 @@
 
         ChromePhp::log($loginId);
         ChromePhp::log($pageId);
+            
         if ($loginId != $pageId){
             echo "<script type='text/javascript'>alert('Not your page! You'll be signed out.');</script>";
             echo "<META HTTP-EQUIV=\"refresh\" content=\"2; URL=logout.php\">";

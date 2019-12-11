@@ -79,12 +79,12 @@
 
                      <!--b. present info-->
     <form action="login.php" method="post">
-        <a href="javascript:;" onclick="parentNode.submit();"><?php echo"<h1 class=\"arrow\"> Not Ow</h1>"; ?></a>
+        <a href="javascript:;" onclick="parentNode.submit();"><?php echo"<h1 class=\"arrow\"> Meghan Mitchell </h1>"; ?></a>
         <input type="hidden" name="page_fac_id" value=testAdmin>
     </form>
     <?php
         // echo ("<img src=\"$prof_img_loc\">"); TODO: remove when proper image path comes
-        echo ("<img src=\"./assets/img/krista.jpg \">");
+        echo ("<img src=\"./assets/img/meghan.jpg \">");
         echo "<hr>";
     ?>
 
