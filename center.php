@@ -54,7 +54,7 @@
 			<div class="slides-container">
 			  <img src="assets/img/art3.jpg" alt="Cinelli">
 			  <img src="assets/img/art5.jpg" alt="Surly">
-			  <img src="assets/img/art4.jpg" alt="Cinelli">
+			  <img src="assets/img/art6.jpg" alt="Cinelli">
 			  
 			</div>
 			<nav class="slides-navigation">
