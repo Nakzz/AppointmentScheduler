@@ -21,7 +21,7 @@
         function write_a_block($facid,$blockName,$connection){
             /*try get all active items in the block with sql*/
             /* MySQL query */
-            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$facid\" AND category=\"$blockName\" AND active=\"1\" ORDER BY 'display_order' ASC";
+            $query_sentence="SELECT * FROM ITEMS WHERE fac_id=\"$facid\" AND category=\"$blockName\" AND active=\"1\" ORDER BY display_order ASC";
             $result = mysqli_query($connection,$query_sentence);
             if(!$result){
                 echo "<script type='text/javascript'>alert('connection $blockName failed!');</script>";
