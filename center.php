@@ -94,7 +94,14 @@
 						 and programs, diverse and distinguished faculty, a major academic medical center and proud history as 
 						 a renowned research university. The community and culture of the University are enriched by active student
 						self-governance, sustained commitment to the arts and a robust NCAA Division I Athletics program. </br>
-						 </p>
+						 </p> <br> </br>
+						 <table>
+							<tr>
+								<td> <img src="assets/img/music.jpg" width="200" height="200" alt="" /> </td>
+								<td> <img src="assets/img/camera.jpg" width="300" height="200" alt="" /> </td>
+								<td> <img src="assets/img/paint.jpg" width="250" height="200" alt="" /></td>
+			</tr>
+		</table>
 					</div>
 				</div>
 			</div>
