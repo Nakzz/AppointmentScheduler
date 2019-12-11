@@ -1,7 +1,15 @@
 <html>
 <head>
-    <title>Professor Control Panel</title>
-    <?php 
+
+    
+    <?php
+
+    $title = "Faculty";
+
+    include_once("./includes/head.php");
+
+
+
         include("./includes/connect.inc.php");
         include("./includes/appointment.auth.inc.php");
         $addSentence="";
@@ -73,7 +81,12 @@
 
     ?>
 </head>
-<body>
+<body id="top" data-spy="scroll" data-target=".header" data-offset="80">
+	  
+
+      <!--HEADER-->
+
+<?php include_once("./includes/nav-bar.php") ?>
 <?php
     //authorization part
     session_start();
@@ -111,6 +124,11 @@
     
     
 ?>  
+<section class="intro text-left section-padding autoheight" id="intro">
+			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
+				<div class="row">
+					<div class="col-lg-8 about">
+
     <FORM name="selectDae" action=professor_cPanel.php method=POST>
         <label for="start">Select Date You'd like to see:</label>
         <input type="date" id="start" name="trip_start"
@@ -130,5 +148,12 @@
         <input type="submit" name="addNewRecord" value="SUBMIT"> 
         
     </FORM>
+					</div>
+				</div>
+			</div>
+        </section>
+        <?php include_once("./includes/footer.php")?>
+	<script type="text/javascript" src="assets/js/init_<?php echo $title?>.js"></script>
+
 </body>
 </html>
