@@ -90,7 +90,7 @@
 
 <!--b. present info-->
 <?php 
-        write_if_not_blank("Office",$prof_office);f
+        write_if_not_blank("Office",$prof_office);
         write_if_not_blank("Phone",$prof_phone);
         write_if_not_blank("Email",$prof_email);
     ?>
