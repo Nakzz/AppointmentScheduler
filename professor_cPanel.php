@@ -120,7 +120,7 @@
 	if($rowNum==0){
 	    echo("<p>No Timeslot!</p>");
 	}else{
-        echo ("<table cellpadding=20><tr><td align=center>Date</td><td>student 4digitId</td>
+        echo ("<table cellpadding=20><tr><td align=right valign=right>Date</td><td>student 4digitId</td>
         <td>student LastName</td><td>is Locked</td><td>Record StartTime</td><td>Record EndTime</td>
         <td>Lock?</td><td>Change?</td>><td>delete?</td></tr>");
 
