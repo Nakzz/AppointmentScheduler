@@ -47,7 +47,7 @@
 <section class="intro text-left section-padding autoheight" id="intro">
 			<div class="container wow animated fadeInLeft animated" data-wow-duration="1s" data-wow-delay="0.5s">
 				<div class="row">
-					<div class="col-lg-8 about">
+					<div class="col-lg-6 about">
 
     <?php
     function addARecord($row){
