@@ -16,7 +16,6 @@
             echo $sentence;//debug
 		    $return = mysqli_query($conn,$sentence);
             if ($return == TRUE){
-                echo "<script type='text/javascript'>alert('Updated');</script>";
                 echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=update.php\">";
             }else{
                 die("dead!".mysqli_error($conn));
@@ -26,7 +25,6 @@
             $sentence ="DELETE FROM ITEMS WHERE item_code='$item_code'";
 		    $return = mysqli_query($conn,$sentence);
             if ($return == TRUE){
-                echo "<script type='text/javascript'>alert('Deleted');</script>";
                 echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=update.php\">";
             }else{
                 die("dead!".mysqli_error($conn));
@@ -38,7 +36,6 @@
             VALUES ('$fac_id','$category','$display_order','$active','$description')";
             $return = mysqli_query($conn,$sentence);
             if ($return == TRUE){
-                echo "<script type='text/javascript'>alert('Added');</script>";
                 echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=update.php\">";
             }else{
                 die("dead!".mysqli_error($conn));

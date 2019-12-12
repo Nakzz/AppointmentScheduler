@@ -21,7 +21,7 @@
             $sentence = "INSERT INTO RECORD (fac_id,record_date,record_starttime,record_endtime) VALUES (\"$fac_id\",\"$date\",\"$start_time\",\"$end_time\")";
             $return = mysqli_query($conn,$sentence);
             if ($return == TRUE){
-                echo "<script type='text/javascript'>alert('Updated');</script>";
+                echo "<script type='text/javascript'>alert('Record Added!');</script>";
                 echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=professor_cPanel.php\">";
             }else{
                 die("dead!".mysqli_error($conn));
@@ -120,7 +120,7 @@
 	if($rowNum==0){
 	    echo("<p>No Timeslot!</p>");
 	}else{
-        echo ("<table cellspacing=50><tr><td>Date</td><td>student 4digitId</td>
+        echo ("<table border=1><tr><td>Date</td><td>student 4digitId</td>
         <td>student LastName</td><td>is Locked</td><td>Record StartTime</td><td>Record EndTime</td>
         <td>Lock?</td><td>Change?</td>><td>delete?</td></tr>");
 

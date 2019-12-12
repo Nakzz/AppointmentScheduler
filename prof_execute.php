@@ -23,7 +23,6 @@
     }
     $return = mysqli_query($conn,$sentence);
             if ($return == TRUE){
-                echo "<script type='text/javascript'>alert('Updated');</script>";
                 echo "<META HTTP-EQUIV=\"refresh\" content=\"0; URL=professor_cPanel.php\">";
             }else{
                 die("dead!".mysqli_error($conn));

@@ -149,15 +149,19 @@
 		<?php 
 		$professor_name = $_POST['prof_name'];
 		$prof_sentence="";
+		$prof_showingSentence="For all professors";
 			switch($professor_name){
 				case "CHOOSE A PROFESSOR":
 					$prof_sentence="";
+					$prof_showingSentence="For all professors";
 					break;
 				case "Meg":
 					$prof_sentence=" AND (fac_id=\"mmitchell\")";
+					$prof_showingSentence="For Meg";
 					break;
 				case "Krista":
 					$prof_sentence=" AND (fac_id=\"kmalone\")";
+					$prof_showingSentence="For Krista";
 					break;
 
 			}
@@ -202,6 +206,7 @@
 							
 					</form>
 						 <a href="professor_login.php">  <p >Click <span style="color: blue"> Here </span> for Professor Login </p>  </a> <br>
+						 <div class="day"><?php echo ($prof_showingSentence); ?></div>
 					
                         
                     	<section id="section-1">
