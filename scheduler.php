@@ -118,6 +118,17 @@
 			Functions::endTag("div");
 
 		}
+
+		function checkAvailable($date,$prof_sentence_in,$conn){
+			$sentence = "SELECT SUM(IF((is_available=\"1\")AND(record_date=\"$date\")AND(student_4_digit IS NULL)".$prof_sentence_in.", 1, 0)) AS sum FROM RECORD;";
+			$result = mysqli_query($conn, $sentence);
+			if (!$result){
+				die(mysqli_error($conn));
+			}
+			$row = mysqli_fetch_assoc($result);
+			$avail_num= $row['sum'];
+			echo ("($avail_num)");
+		}
 		
 
 		?>
@@ -135,6 +146,22 @@
 	
 
 		<!--/HEADER-->
+		<?php 
+		$professor_name = $_POST['prof_name'];
+		$prof_sentence="";
+			switch($professor_name){
+				case "CHOOSE A PROFESSOR":
+					$prof_sentence="";
+					break;
+				case "Meg":
+					$prof_sentence=" AND (fac_id=\"mmitchell\")";
+					break;
+				case "Krista":
+					$prof_sentence=" AND (fac_id=\"kmalone\")";
+					break;
+
+			}
+		?>
 		
 
 		
@@ -154,11 +181,11 @@
 				<div id="tabs-ui" class="tabs">
 					<nav>
 						<ul>
-							<li id="1"><a href="#section-1"><span>Monday</span></a></li>
-							<li id="2"><a href="#section-2"><span>Tuesday</span></a></li>
-							<li id="3"><a href="#section-3"><span>Wednesday</span></a></li>
-							<li id="4"><a href="#section-4"><span>Thursday</span></a></li>
-							<li id="5"> <a href="#section-5"><span>Friday</span></a></li>
+							<li id="1"><a href="#section-1"><span>Monday<?php checkAvailable("2019-12-02",$prof_sentence,$conn); ?></span></a></li>
+							<li id="2"><a href="#section-2"><span>Tuesday<?php checkAvailable("2019-12-03",$prof_sentence,$conn);?></span></a></li>
+							<li id="3"><a href="#section-3"><span>Wednesday<?php checkAvailable("2019-12-04",$prof_sentence,$conn);?></span></a></li>
+							<li id="4"><a href="#section-4"><span>Thursday<?php checkAvailable("2019-12-05",$prof_sentence,$conn);?></span></a></li>
+							<li id="5"> <a href="#section-5"><span>Friday<?php checkAvailable("2019-12-06",$prof_sentence,$conn);?></span></a></li>
 						</ul>
 					</nav>
 					<div class="content">
@@ -175,21 +202,7 @@
 							
 					</form>
 						 <a href="professor_login.php">  <p >Click <span style="color: blue"> Here </span> for Professor Login </p>  </a> <br>
-					<?php 
-					$professor_name = $_POST['prof_name'];
-					$prof_sentence;
-						switch($professor_name){
-							case "CHOOSE A PROFESSOR":
-								$prof_sentence="";
-								break;
-							case "Meg":
-								$prof_sentence=" AND (fac_id=\"mmitchell\")";
-								break;
-							case "Krista":
-								$prof_sentence=" AND (fac_id=\"kmalone\")";
-
-						}
-					?>
+					
                         
                     	<section id="section-1">
 
