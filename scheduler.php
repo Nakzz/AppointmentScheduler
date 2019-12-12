@@ -60,6 +60,16 @@
 			$endTime = $row['record_endtime'];
 			$student_lastName = $row['student_lname'];
 			$fac_id = $row['fac_id'];
+			$fac_name = "testAdmin";
+			switch($fac_id){
+				case "mmitchell":
+					$fac_name="Meg";
+				break;
+				case "kmalone";
+					$fac_name="Krista";
+				break;
+
+			}
 			Functions::startTagwithClass("div","item clearfix");
 				Functions::startTagwithClass("div","heading clearfix");
 					Functions::startTagwithClass("div","time col-md-3 col-sm-12 col-xs-12");
@@ -68,7 +78,7 @@
 					Functions::startTagwithClass("div","e-title col-md-9 col-sm-12 col-xs-12");
 					if($is_available==1){
 						if(empty($student_4digit)){
-							echo ("Available!</br>");
+							echo ("Available for $fac_name !</br>");
 						}else{
 							echo ("Reserved</br>");
 						}
@@ -155,8 +165,8 @@
 					<form name="selfForm" action="scheduler.php" method="POST">
 						<select name="prof_name">
 							<option>CHOOSE A PROFESSOR</option>
-							<option>PROF 1</option>
-							<option>PROF 2</option>
+							<option>Meg</option>
+							<option>Krista</option>
 						</select>
 						<input name="submit_self" type="submit" value="submit">
 						<br>
@@ -169,12 +179,14 @@
 					$professor_name = $_POST['prof_name'];
 					$prof_sentence;
 						switch($professor_name){
-							case "ALL":
+							case "CHOOSE A PROFESSOR":
 								$prof_sentence="";
 								break;
-							case "PROF 1":
-								$prof_sentence=" AND (fac_id=\"testAdmin\")";
+							case "Meg":
+								$prof_sentence=" AND (fac_id=\"mmitchell\")";
 								break;
+							case "Krista":
+								$prof_sentence=" AND (fac_id=\"kmalone\")";
 
 						}
 					?>
@@ -185,7 +197,6 @@
 
 
 							<div class="container">
-                            <p> <?php echo  $spotAvailable ." spots available for " ?> </p>
 
 								<div class="accordion">
 
@@ -208,14 +219,18 @@
 									if($rowNum==0){
 										echo("<p>No Timeslot this day</p>");
 									}else{
-										
+										$available_slot = 0;
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 								  
-								</div>        
+								</div>
+								<p> <?php echo  $available_slot ." spots available for ";$available_slot=0; ?> </p>        
 							</div><!--CONTAINER ENDS-->
 						</section>
 						<section id="section-2">
@@ -223,7 +238,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-03\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-03\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -240,11 +255,15 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 
-								</div>        
+								</div> 
+								<p> <?php echo  $available_slot ." spots available for ";$available_slot=0; ?> </p>         
 							</div>
 						</section>
 						<section id="section-3">
@@ -252,7 +271,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-04\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-04\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -269,10 +288,14 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
-								</div>        
+								</div>  
+								<p> <?php echo  $available_slot ." spots available for ";$available_slot=0; ?> </p>        
 							</div>
 						</section>
 						<section id="section-4">
@@ -280,7 +303,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-05\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-05\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -297,12 +320,16 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 
 									
-								</div>        
+								</div>    
+								<p> <?php echo  $available_slot ." spots available for "; $available_slot=0; ?> </p>      
 							</div>   
 						</section>
 						<section id="section-5">
@@ -310,7 +337,7 @@
 								<div class="accordion">
 								<?php
 								//Data
-								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-06\"";
+								$query_sentence="SELECT * FROM RECORD WHERE record_date=\"2019-12-06\"".$prof_sentence;
 								$result = mysqli_query($conn, $query_sentence);
 								if (!$result){
 									die("cannot processed select queryThis");
@@ -327,11 +354,17 @@
 										
 										while($row = mysqli_fetch_assoc($result)){
 											addARecord($row);
+											if(($row['is_available']==1)and(empty($row['student_4_digit']))){
+												$available_slot ++;
+											}
 										}
 									}
 									?>
 								  
-								</div>        
+								</div>
+								<p> <?php echo  $available_slot ." spots available for ";
+								$available_slot=0;
+								 ?> </p>          
 							</div>
 						</section>
 					</div><!-- /content -->
