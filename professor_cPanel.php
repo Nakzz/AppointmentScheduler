@@ -109,7 +109,7 @@
 ?>
 
 <?php
-    echo "<h2>$prof_name<h2>";
+    echo "<h2>$prof_name</h2>";
     $query_sentence="SELECT * FROM RECORD WHERE (fac_id=\"$prof_id\")".$addSentence;
 	$result = mysqli_query($conn, $query_sentence);
 	if (!$result){
@@ -120,7 +120,8 @@
 	if($rowNum==0){
 	    echo("<p>No Timeslot!</p>");
 	}else{
-        echo ("<table border=1><tr><td>Date</td><td>student 4digitId</td>
+        echo ("<table style='width: 100%;min-width: max-content; font-variant: all-petite-caps;'
+ border=1><tr><td>Date</td><td>student 4digitId</td>
         <td>student LastName</td><td>is Locked</td><td>Record StartTime</td><td>Record EndTime</td>
         <td>Lock?</td><td>Change?</td>><td>delete?</td></tr>");
 
